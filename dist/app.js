@@ -6292,7 +6292,7 @@ const createServer = () => {
         version: "1.0.0",
     });
     // Implement your tools here
-    server.tool("hello_world", "Return 'hello world!'", {
+    server.tool("Hello World", "Return string 'hello world from SCF!'", {
     // Define input parameters using zod. example: 
     // prefix: z.string().describe('prefix').optional(),
     }, async () => {
@@ -6300,7 +6300,7 @@ const createServer = () => {
         return {
             content: [{
                     type: "text",
-                    text: 'hello world!',
+                    text: 'hello world from SCF!',
                 }]
         };
     });
@@ -6332,7 +6332,7 @@ app.post("/messages", async (req, res) => {
     return;
 });
 app.listen(port, () => {
-    console.log(`MCP Server is running on port ${9000}`);
+    console.log(`MCP Server is running on port ${port}`);
 });
 
 
