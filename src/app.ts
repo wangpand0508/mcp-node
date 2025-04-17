@@ -19,8 +19,8 @@ const createServer = () => {
   
   // Implement your tools here
   server.tool(
-    "hello_world",
-    "Return 'hello world!'",
+    "Hello World",
+    "Return string 'hello world from SCF!'",
     {
       // Define input parameters using zod. example: 
       // prefix: z.string().describe('prefix').optional(),
@@ -30,7 +30,7 @@ const createServer = () => {
       return {
         content: [{
           type: "text",
-          text: 'hello world!',
+          text: 'hello world from SCF!',
         }]
       }
     },
@@ -67,5 +67,5 @@ app.post("/messages", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`MCP Server is running on port ${9000}`);
+  console.log(`MCP Server is running on port ${port}`);
 });
