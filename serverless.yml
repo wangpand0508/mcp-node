@@ -1,0 +1,32 @@
+component: http
+name: mcp-node-demo
+inputs:
+  src:
+    src: ./
+    hook: npm run build
+    exclude:
+      - .env
+  region: ap-shanghai
+  isAutoCiDeploy: false
+  faas:
+    framework: mcp
+    name: '${name}'
+    runtime: Nodejs18.15
+    eip: false
+    timeout: 30
+    memorySize: 512
+    tags: []
+    environments: []
+    installDependency: true # 是否在线安装依赖
+    instanceConcurrencyConfig: # 单实例多并发配置,仅web函数支持开启
+      enable: true #是否开启
+      dynamicEnabled: false #是否开启智能动态并发,true: 动态并发,false:表示静态并发
+      maxConcurrency: 3 #最大并发数，dynamicEnabled是false时，可进行设置
+    events:
+      - http:
+          parameters:
+            netConfig:
+              enableIntranet: true
+              enableExtranet: true
+            qualifier: $DEFAULT
+            authType: NONE
