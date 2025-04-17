@@ -3,7 +3,7 @@ name: mcp-node-demo
 inputs:
   src:
     src: ./
-    hook: npm run build
+    # hook: npm run build
     exclude:
       - .env
   region: ap-shanghai
